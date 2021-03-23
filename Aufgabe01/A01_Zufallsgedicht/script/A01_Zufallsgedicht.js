@@ -1,7 +1,6 @@
 "use strict";
 var Zufallsgedicht;
 (function (Zufallsgedicht) {
-    debugger;
     let subjekte = ["Harry ", "Hermine ", "Ron ", "Bellatrix ", "Snape ", "Dumbledore "];
     let prädikate = ["zaubert ", "tötet ", "liebt ", "appariert ", "verflucht ", "sucht "];
     let objekte = ["Zaubertränke", "Werwölfe", "Dementoren", "Hagrid", "Wurmschwanz", "Drachen"];

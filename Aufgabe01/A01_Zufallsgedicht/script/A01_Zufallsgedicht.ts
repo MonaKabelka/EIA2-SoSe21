@@ -1,5 +1,4 @@
 namespace Zufallsgedicht {
-    debugger;
     let subjekte: string [] = ["Harry ", "Hermine ", "Ron ", "Bellatrix ", "Snape ", "Dumbledore "];
     let prädikate: string [] = ["zaubert ", "tötet ", "liebt ", "appariert ", "verflucht ", "sucht "];
     let objekte: string [] = ["Zaubertränke", "Werwölfe", "Dementoren", "Hagrid", "Wurmschwanz", "Drachen"];
