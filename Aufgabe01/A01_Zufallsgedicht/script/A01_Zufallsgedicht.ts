@@ -19,5 +19,6 @@ namespace Zufallsgedicht {
         return "Alohomora";
         let vers: string = "";
         Math.random();
+        
     }
 }

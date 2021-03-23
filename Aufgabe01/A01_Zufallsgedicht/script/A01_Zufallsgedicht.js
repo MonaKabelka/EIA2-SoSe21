@@ -8,14 +8,13 @@ var Zufallsgedicht;
     console.log();
     for (a = 6; a > 0; a--) { //6 bis 1 werden ausgegeben? stimmt das?
         console.log(a);
-        subjekte = [];
-        prädikate = [];
-        objekte = [];
-        let x = getVerse(subjekte[0], prädikate[0], objekte[0]);
+        let x = getVerse(subjekte[a], prädikate[a], objekte[a]);
         console.log(x);
     }
     function getVerse(_subjekt, _prädikat, _objekt) {
         return "Alohomora";
+        let vers = "";
+        Math.random();
     }
 })(Zufallsgedicht || (Zufallsgedicht = {}));
 //# sourceMappingURL=A01_Zufallsgedicht.js.map
