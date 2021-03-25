@@ -8,18 +8,18 @@ namespace Zufallsgedicht {
         console.log(x);
     }
 
-    function getVerse(_subjekt: string[], _prädikat: string[], _objekt: string[]): string {
+    function getVerse(_subject: string[], _predicate: string[], _object: string[]): string {
         let versContainer: string = "";
 
-        let randomNrSubjekt: number = Math.floor(Math.random() * Math.floor(_subjekt.length));
-        let randomNrPrädikat: number = Math.floor(Math.random() * Math.floor(_prädikat.length));
-        let randomNrObject: number = Math.floor(Math.random() * Math.floor(_objekt.length));
+        let randomNumberSubject: number = Math.floor(Math.random() * Math.floor(_subject.length));
+        let randomNumberPredicate: number = Math.floor(Math.random() * Math.floor(_predicate.length));
+        let randomNumberObject: number = Math.floor(Math.random() * Math.floor(_object.length));
 
-        versContainer = _subjekt[randomNrSubjekt] + _prädikat[randomNrPrädikat] + _objekt[randomNrObject];
+        versContainer = _subject[randomNumberSubject] + _predicate[randomNumberPredicate] + _object[randomNumberObject];
 
-        _subjekt.splice(randomNrSubjekt, 1); //splice: 1.Parameter: Stelle ab der gelöscht wird, 2.Parameter: wie viel gelöscht wird 
-        _prädikat.splice(randomNrPrädikat, 1);
-        _objekt.splice(randomNrObject, 1);
+        _subject.splice(randomNumberSubject, 1); //splice: 1.Parameter: Stelle ab der gelöscht wird, 2.Parameter: wie viel gelöscht wird 
+        _predicate.splice(randomNumberPredicate, 1);
+        _object.splice(randomNumberObject, 1);
 
         return versContainer;
     }

@@ -8,15 +8,15 @@ var Zufallsgedicht;
         let x = getVerse(subjects, predicates, objects);
         console.log(x);
     }
-    function getVerse(_subjekt, _prädikat, _objekt) {
+    function getVerse(_subject, _predicate, _object) {
         let versContainer = "";
-        let randomNrSubjekt = Math.floor(Math.random() * Math.floor(_subjekt.length));
-        let randomNrPrädikat = Math.floor(Math.random() * Math.floor(_prädikat.length));
-        let randomNrObject = Math.floor(Math.random() * Math.floor(_objekt.length));
-        versContainer = _subjekt[randomNrSubjekt] + _prädikat[randomNrPrädikat] + _objekt[randomNrObject];
-        _subjekt.splice(randomNrSubjekt, 1); //splice: 1.Parameter: Stelle ab der gelöscht wird, 2.Parameter: wie viel gelöscht wird 
-        _prädikat.splice(randomNrPrädikat, 1);
-        _objekt.splice(randomNrObject, 1);
+        let randomNumberSubject = Math.floor(Math.random() * Math.floor(_subject.length));
+        let randomNumberPredicate = Math.floor(Math.random() * Math.floor(_predicate.length));
+        let randomNumberObject = Math.floor(Math.random() * Math.floor(_object.length));
+        versContainer = _subject[randomNumberSubject] + _predicate[randomNumberPredicate] + _object[randomNumberObject];
+        _subject.splice(randomNumberSubject, 1); //splice: 1.Parameter: Stelle ab der gelöscht wird, 2.Parameter: wie viel gelöscht wird 
+        _predicate.splice(randomNumberPredicate, 1);
+        _object.splice(randomNumberObject, 1);
         return versContainer;
     }
 })(Zufallsgedicht || (Zufallsgedicht = {}));
