@@ -1,7 +1,7 @@
 namespace Zufallsgedicht {
-    let subjekte: string [] = ["Harry ", "Hermine ", "Ron ", "Bellatrix ", "Snape ", "Dumbledore "];
-    let prädikate: string [] = ["zaubert ", "tötet ", "liebt ", "appariert ", "verflucht ", "sucht "];
-    let objekte: string [] = ["Zaubertränke", "Werwölfe", "Dementoren", "Hagrid", "Wurmschwanz", "Drachen"];
+    let subjekte: string [] = ["Naruto ", "Pain ", "Kakashi ", "Jiraiya ", "Itachi ", "Minato "];
+    let prädikate: string [] = ["bekämpft ", "tötet ", "liebt ", "trainiert mit ", "versiegelt ", "isst "];
+    let objekte: string [] = ["Sasuke", "Rock Lee", "Ramen", "Flirtparadies", "Schattendoppelgänger", "Gamabunta"];
 
     for (let a: number = 6; a > 0; a--) {
         let x: string = getVerse(subjekte, prädikate, objekte);
