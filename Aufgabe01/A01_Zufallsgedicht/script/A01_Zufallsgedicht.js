@@ -1,9 +1,9 @@
 "use strict";
 var Zufallsgedicht;
 (function (Zufallsgedicht) {
-    let subjekte = ["Harry ", "Hermine ", "Ron ", "Bellatrix ", "Snape ", "Dumbledore "];
-    let prädikate = ["zaubert ", "tötet ", "liebt ", "appariert ", "verflucht ", "sucht "];
-    let objekte = ["Zaubertränke", "Werwölfe", "Dementoren", "Hagrid", "Wurmschwanz", "Drachen"];
+    let subjekte = ["Naruto ", "Pain ", "Kakashi ", "Jiraiya ", "Itachi ", "Minato "];
+    let prädikate = ["bekämpft ", "tötet ", "liebt ", "trainiert mit ", "versiegelt ", "isst "];
+    let objekte = ["Sasuke", "Rock Lee", "Ramen", "Flirtparadies", "Schattendoppelgänger", "Gamabunta"];
     for (let a = 6; a > 0; a--) {
         let x = getVerse(subjekte, prädikate, objekte);
         console.log(x);
