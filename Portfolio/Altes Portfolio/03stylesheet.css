@@ -1,0 +1,165 @@
+/*Allgemein*/
+body{ 
+    background-image: url("Images/bg.png");
+    font-family: sans-serif;
+}
+
+/*Halbkreis*/
+.circle {
+    background-color: rgb(206, 119, 66);
+    height: 800px;
+    width: 800px;
+    border-radius: 0px 0px 400px 400px;;
+    display: block; 
+    margin-right: auto; 
+    margin-left: auto;
+    margin-top:-610px;
+}
+
+.circletext .headline {
+    color: black;
+    display: block;
+    height: 150px;
+    padding-top: 440px;
+    margin-bottom: 20px;
+    font-size: 180px;
+    letter-spacing: -10px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.circletext .headline2 {
+    color:rgb(0, 0, 0);
+    letter-spacing: 10px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.icons {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.icons:hover{ 
+    transform: translateY(-10px);
+}
+
+/*Navigationsleiste*/
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 30px;
+}
+
+.navbarlist {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+
+.navbar .active {
+    background-color: rgb(206, 119, 66);
+}
+
+.navbarlist a{
+    font-size: 18px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    padding: 5px;
+}
+
+.navbarlist li {
+    list-style: none;
+    letter-spacing: 10px;
+}
+
+.navbarlist a:hover{
+    color: rgb(161, 81, 31);
+    font-size: 20px;
+}
+
+/*Inhalt Portfolio*/
+.content {
+    margin-top: 110px;
+    text-align: center;
+    font-size: 20px;
+    font-family: sans-serif;
+    letter-spacing: 10px
+
+}
+
+.multimedia {
+    text-align: center
+}
+
+/* Inhalt About Me*/
+.aboutme {
+    display: block;
+    margin-left: 40%;
+    margin-top: 110px;
+    font-size: 20px;
+    font-family: sans-serif;
+    letter-spacing: 8px;
+    line-height: 30px;
+}
+
+/*Kontaktformular*/
+.contactformular {
+    margin-top: 110px;
+}
+
+.contactformular p {
+    text-align: center;
+    font-size: 20px;
+    font-family: sans-serif;
+    letter-spacing: 10px
+}
+
+.datenschutz {
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.Formular {
+    background: white;
+    font-size:16px;
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    border-width: 1px;
+    border-color: black;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+}
+
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+    width: 300px;
+    background:white;
+    font-size:15px;
+    border-width: 1px;
+    border-color: black;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+}
+
+.button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    width: 110px;
+    height: 30px;
+    font-size:15px;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+}

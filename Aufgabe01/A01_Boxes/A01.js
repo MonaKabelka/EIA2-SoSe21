@@ -1,6 +1,7 @@
 "use strict";
 var Boxes;
 (function (Boxes) {
+    debugger;
     let n = 5;
     let color;
     let x = 0;
