@@ -1,0 +1,30 @@
+html {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.span {
+    border-style: solid;
+    position: fixed;
+}
+
+.div0 {
+    border-style: solid;
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+}
+
+.div1 {
+    border-style: solid;
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+}
+
+h1 {
+    border-style: solid;
+    text-align: center;
+}
