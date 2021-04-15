@@ -19,7 +19,7 @@ var EventInspector;
         let x = _event.clientX;
         let y = _event.clientY;
         let mousePosition = "X coordinates: " + x + ", Y coordinates: " + y;
-        let eventTarget = _event.target; //typedef?
+        let eventTarget = _event.target;
         spanElement.innerHTML = mousePosition + eventTarget;
         spanElement.style.top = y + -50 + "px";
         spanElement.style.left = x + "px";
