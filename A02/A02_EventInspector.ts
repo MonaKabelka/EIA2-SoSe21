@@ -26,7 +26,7 @@ namespace EventInspector {
         let mousePosition: string = "X coordinates: " + x + ", Y coordinates: " + y;
         let eventTarget: EventTarget = <EventTarget>_event.target; 
 
-        spanElement.innerHTML = mousePosition + eventTarget;
+        spanElement.innerHTML = mousePosition + "<br>" + eventTarget;
         spanElement.style.top = y + -50 + "px";
         spanElement.style.left = x + "px";
     }
