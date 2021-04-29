@@ -1,0 +1,24 @@
+body {
+   justify-content: center; 
+   align-items: center;
+   display: grid;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+h1 {
+    text-align: center;
+}
+
+#form {
+    border: black solid 5px;
+    padding: 5px;
+}
+
+#memoryArea {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 1em;
+}

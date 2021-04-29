@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L03 Memory</title>
+    <link rel="stylesheet" href="L03_MemorySettings.css" />
+    <script src="L03_MemorySettings.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+<h1>Memory Game</h1>   
+    <div  id="form">
+        <form>
+            <div id="divCardAmount">
+                <label for="pairs">Choose a number for your cardpairs (5-25): </label>
+                <input type="number" name="pairs" id="pairs" min="5" max="25" step="1" value="5">
+            </div> <br>
+
+            <div id="divCardSize">
+                <label for="size">Choose size for cards: </label>
+                <input type="range" id="size" name="size" min="20" max="100" value="20" step="1">
+            </div> <br>
+            
+            <div id="divBackground">
+                <label for="background">Choose a background color: </label>
+                <input id="background" name="background" type="color" value="#ffffff">
+            </div><br>
+
+            <div id="divFontColor">
+                <label for="fontColor">Coose a font color: </label>
+                <input id="fontColor" name="fontColor" type="color" value="#ffffff"><br>
+            </div><br>
+
+            <div id="divCardsColor">
+                <label for="cardsColor">Choose a card background color: </label>
+                <input id="cardsColor" name="cardsColors" type="color" value="#ffffff"><br>
+            </div><br>
+
+            <div>
+            <p>Choose a font: </p>
+                <input type="radio" id="monospace" name="font" value="arial">
+                <label for="Arial">Arial</label>
+
+                <input type="radio" id="helvetica" name="font" value="helvetica">
+                <label for="Helvetica">Helvetica</label>
+
+                <input type="radio" id="timesnewroman" name="font" value="timesnewroman">
+                <label for="TimesNewRoman">Times New Roman</label>
+            </div><br>
+
+        </form>
+    </div>
+
+    <button id="startButton" name="startButton">Start</button>
+
+    <div id="memoryArea"></div>
+
+</body>
+
+</html>
