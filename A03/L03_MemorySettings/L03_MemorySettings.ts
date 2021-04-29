@@ -38,7 +38,7 @@ namespace L03_MemorySettings {
                 cardArray.push(cardSymbol[m]);
             }
         }
-        
+
         cardArray.sort(() => 0.5 - Math.random());
 
         for (let index: number = 0; index < cardArray.length; index++) {
@@ -62,8 +62,8 @@ namespace L03_MemorySettings {
 
     function compareCards(): void {
         // SPAN für die kreiirte Karte => je nachdem wie ich die karten erstelle
-        let spanValue0: string = cardStorage[0].querySelector("span").innerHTML;
-        let spanValue1: string = cardStorage[1].querySelector("span")?.innerHTML;
+        let spanValue0: string = <string>cardStorage[0].querySelector("span")?.innerHTML;
+        let spanValue1: string = <string>cardStorage[1].querySelector("span")?.innerHTML;
         if (spanValue0 == spanValue1) {
             cardStorage[0].classList.add("hidden");
             cardStorage[1].classList.add("hidden");

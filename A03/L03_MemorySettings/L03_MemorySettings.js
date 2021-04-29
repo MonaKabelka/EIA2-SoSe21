@@ -53,7 +53,7 @@ var L03_MemorySettings;
     }
     function compareCards() {
         // SPAN für die kreiirte Karte => je nachdem wie ich die karten erstelle
-        let spanValue0 = cardStorage[0].querySelector("span").innerHTML;
+        let spanValue0 = cardStorage[0].querySelector("span")?.innerHTML;
         let spanValue1 = cardStorage[1].querySelector("span")?.innerHTML;
         if (spanValue0 == spanValue1) {
             cardStorage[0].classList.add("hidden");
