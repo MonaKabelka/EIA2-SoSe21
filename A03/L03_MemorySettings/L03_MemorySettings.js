@@ -7,64 +7,77 @@ var L03_MemorySettings;
     let cardField;
     let cardStorage = [];
     let foundPairs = 0;
+    let startButton;
+    let divForm;
+    let cardProperties = [];
     window.addEventListener("load", handleLoad);
     function handleLoad() {
-        let divForm = document.querySelector("#form");
+        divForm = document.querySelector("#form");
+        startButton = document.querySelector("#startButton");
         divForm.addEventListener("change", handleChange);
         cardField = document.querySelector("#memoryArea");
+        startButton.addEventListener("click", createCards);
     }
     function handleChange(_event) {
         _event.preventDefault();
-        let startButton = document.querySelector("#startButton");
         let formData = new FormData(document.forms[0]);
-        let cardProperties = [];
+        cardProperties = [];
         for (let entry of formData) {
             cardProperties.push(String(entry[1]));
             console.log(cardProperties);
         }
-        startButton.addEventListener("click", function () {
-            createCardboard(cardProperties);
-        });
     }
-    function createCardboard(_cardProperties) {
-        pairsAmount = Number(_cardProperties[0]);
+    function createCards() {
+        divForm.classList.add("hidden");
+        startButton.classList.add("hidden");
+        pairsAmount = Number(cardProperties[0]);
         for (let i = 0; i < 2; i++) {
             for (let m = 0; m < pairsAmount; m++) {
                 cardArray.push(cardSymbol[m]);
             }
         }
         cardArray.sort(() => 0.5 - Math.random());
+        cardField.innerHTML = "";
         for (let index = 0; index < cardArray.length; index++) {
             let card = document.createElement("div");
-            card.style.background = "black";
+            card.style.width = cardProperties[1] + "px";
+            card.style.height = cardProperties[1] + "px";
+            card.style.background = cardProperties[4];
+            card.style.color = cardProperties[3];
             card.innerHTML = "<span>" + cardArray[index] + "</span>";
             cardField.appendChild(card);
             card.addEventListener("click", flipCard);
+            let allSpans = document.querySelectorAll("span");
+            allSpans[index].classList.add("visibility");
         }
+        //TIMER!!!!
     }
     function flipCard(_event) {
-        cardStorage.push(_event.target);
-        cardStorage[0].style.background = "grey";
+        let target = _event.target;
+        cardStorage.push(target);
+        cardStorage[0].style.background = "black";
+        cardStorage[0].querySelector("span")?.classList.remove("visibility");
         if (cardStorage.length == 2) {
-            cardStorage[1].style.background = "grey";
-            //set timeout
-            compareCards();
+            cardStorage[1].style.background = "black";
+            cardStorage[1].querySelector("span")?.classList.remove("visibility");
+            setTimeout(compareCards, 2000);
         }
     }
     function compareCards() {
-        // SPAN für die kreiirte Karte => je nachdem wie ich die karten erstelle
         let spanValue0 = cardStorage[0].querySelector("span")?.innerHTML;
         let spanValue1 = cardStorage[1].querySelector("span")?.innerHTML;
         if (spanValue0 == spanValue1) {
-            cardStorage[0].classList.add("hidden");
-            cardStorage[1].classList.add("hidden");
+            cardStorage[0].classList.add("visibility");
+            cardStorage[1].classList.add("visibility");
             cardStorage = [];
             foundPairs++;
             checkWin();
         }
         else {
-            cardStorage[0].style.background = "black";
-            cardStorage[1].style.background = "black";
+            cardStorage[0].style.background = cardProperties[4];
+            cardStorage[1].style.background = cardProperties[4];
+            cardStorage[0].querySelector("span")?.classList.add("visibility");
+            cardStorage[1].querySelector("span")?.classList.add("visibility");
             cardStorage = [];
         }
     }

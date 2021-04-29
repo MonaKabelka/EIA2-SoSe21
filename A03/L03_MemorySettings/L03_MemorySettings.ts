@@ -6,33 +6,34 @@ namespace L03_MemorySettings {
     let cardField: HTMLElement;
     let cardStorage: HTMLElement[] = [];
     let foundPairs: number = 0;
+    let startButton: HTMLElement;
+    let divForm: HTMLElement;
+    let cardProperties: string[] = [];
 
     window.addEventListener("load", handleLoad);
 
     function handleLoad(): void {
-        let divForm: HTMLElement = <HTMLElement>document.querySelector("#form");
+        divForm = <HTMLElement>document.querySelector("#form");
+        startButton = <HTMLElement>document.querySelector("#startButton");
         divForm.addEventListener("change", handleChange);
         cardField = <HTMLDivElement>document.querySelector("#memoryArea");
+        startButton.addEventListener("click", createCards);
     }
 
     function handleChange(_event: Event): void {
         _event.preventDefault();
-        let startButton: HTMLElement = <HTMLElement>document.querySelector("#startButton");
         let formData: FormData = new FormData(document.forms[0]);
-        let cardProperties: string [] = [];
-
+        cardProperties = [];
         for (let entry of formData) {
             cardProperties.push(String(entry[1]));
             console.log(cardProperties);
-        }
-
-        startButton.addEventListener("click", function (): void {             
-            createCardboard(cardProperties); 
-        });            
+        }            
     }
 
-    function createCardboard(_cardProperties: string[]): void {
-        pairsAmount = Number(_cardProperties[0]);
+    function createCards(): void {
+        divForm.classList.add("hidden");
+        startButton.classList.add("hidden");
+        pairsAmount = Number(cardProperties[0]);
         for (let i: number = 0; i < 2; i++) {
             for (let m: number = 0; m < pairsAmount; m++) {
                 cardArray.push(cardSymbol[m]);
@@ -40,39 +41,49 @@ namespace L03_MemorySettings {
         }
 
         cardArray.sort(() => 0.5 - Math.random());
+        cardField.innerHTML = "";
 
         for (let index: number = 0; index < cardArray.length; index++) {
             let card: HTMLElement = <HTMLElement>document.createElement("div");
-            card.style.background = "black";
+            card.style.width = cardProperties[1] + "px";
+            card.style.height = cardProperties[1] + "px";
+            card.style.background = cardProperties[4];
+            card.style.color = cardProperties[3];
             card.innerHTML = "<span>" + cardArray[index] + "</span>";
             cardField.appendChild(card);
             card.addEventListener("click", flipCard);
+            let allSpans: NodeListOf<HTMLElement> = document.querySelectorAll("span");
+            allSpans[index].classList.add("visibility");
         }
+        //TIMER!!!!
     }
 
     function flipCard(_event: MouseEvent): void {
-        cardStorage.push(_event.target);
-        cardStorage[0].style.background = "grey";
+        let target: HTMLElement = <HTMLElement> _event.target;
+        cardStorage.push(target);
+        cardStorage[0].style.background = "black";
+        cardStorage[0].querySelector("span")?.classList.remove("visibility");
         if (cardStorage.length == 2) {
-            cardStorage[1].style.background = "grey";
-            //set timeout
-            compareCards();
+            cardStorage[1].style.background = "black";
+            cardStorage[1].querySelector("span")?.classList.remove("visibility");
+            setTimeout(compareCards, 2000);
         }
     }
 
     function compareCards(): void {
-        // SPAN für die kreiirte Karte => je nachdem wie ich die karten erstelle
         let spanValue0: string = <string>cardStorage[0].querySelector("span")?.innerHTML;
         let spanValue1: string = <string>cardStorage[1].querySelector("span")?.innerHTML;
         if (spanValue0 == spanValue1) {
-            cardStorage[0].classList.add("hidden");
-            cardStorage[1].classList.add("hidden");
+            cardStorage[0].classList.add("visibility");
+            cardStorage[1].classList.add("visibility");
             cardStorage = [];
             foundPairs++;
             checkWin();
         } else {
-            cardStorage[0].style.background = "black";
-            cardStorage[1].style.background = "black";
+            cardStorage[0].style.background = cardProperties[4];
+            cardStorage[1].style.background = cardProperties[4];
+            cardStorage[0].querySelector("span")?.classList.add("visibility");
+            cardStorage[1].querySelector("span")?.classList.add("visibility");
             cardStorage = [];
         }
     }
