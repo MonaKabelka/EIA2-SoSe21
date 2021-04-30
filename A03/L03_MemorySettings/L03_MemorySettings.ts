@@ -10,6 +10,11 @@ namespace L03_MemorySettings {
     let divForm: HTMLElement;
     let cardProperties: string[] = [];
 
+    let seconds: number = 0;
+    let minutes: number = 0;
+    let hours: number = 0;
+    let timerHTML: HTMLElement = <HTMLElement>document.querySelector("#timer");
+
     window.addEventListener("load", handleLoad);
 
     function handleLoad(): void {
@@ -39,10 +44,10 @@ namespace L03_MemorySettings {
                 cardArray.push(cardSymbol[m]);
             }
         }
-
         cardArray.sort(() => 0.5 - Math.random());
         cardField.innerHTML = "";
-
+        document.body.style.background = cardProperties[2];
+        document.body.style.fontFamily = cardProperties[5];
         for (let index: number = 0; index < cardArray.length; index++) {
             let card: HTMLElement = <HTMLElement>document.createElement("div");
             card.style.width = cardProperties[1] + "px";
@@ -55,16 +60,31 @@ namespace L03_MemorySettings {
             let allSpans: NodeListOf<HTMLElement> = document.querySelectorAll("span");
             allSpans[index].classList.add("visibility");
         }
-        //TIMER!!!!
+        add();
+    }
+
+    function add(): void {
+        setInterval (function (): void {
+            seconds++;
+            if (seconds >= 60) {
+                    seconds = 0;
+                    minutes++;
+                    if (minutes >= 60) {
+                        minutes = 0;
+                        hours++;
+                    }
+                }
+            timerHTML.innerHTML = hours + ":" + minutes + ":" + seconds;
+            },       1000);
     }
 
     function flipCard(_event: MouseEvent): void {
         let target: HTMLElement = <HTMLElement> _event.target;
         cardStorage.push(target);
-        cardStorage[0].style.background = "black";
+        cardStorage[0].style.background = "white";
         cardStorage[0].querySelector("span")?.classList.remove("visibility");
         if (cardStorage.length == 2) {
-            cardStorage[1].style.background = "black";
+            cardStorage[1].style.background = "white";
             cardStorage[1].querySelector("span")?.classList.remove("visibility");
             setTimeout(compareCards, 2000);
         }
@@ -90,8 +110,8 @@ namespace L03_MemorySettings {
 
     function checkWin(): void {
         if (foundPairs == pairsAmount) {
-            //stop TImer
-            window.alert("The game is over! You played for " + /*timer*/ + "s");
+            //Stop Timer?
+            window.alert("The game is over! You played for " + hours + ":" + minutes + ":" + seconds + "! Press F5 to play again!");
         }
     }
 }

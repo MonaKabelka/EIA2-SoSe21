@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L03 Memory</title>
     <link rel="stylesheet" href="L03_MemorySettings.css" />
-    <script src="L03_MemorySettings.js" type="text/javascript" charset="utf-8"></script>
+    <script src="L03_MemorySettings.js" type="text/javascript" charset="utf-8" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -21,7 +23,7 @@
 
             <div id="divCardSize">
                 <label for="size">Choose size for cards: </label>
-                <input type="range" id="size" name="size" min="50" max="200" value="50" step="1">
+                <input type="range" id="size" name="size" min="100" max="200" value="100" step="1">
             </div> <br>
             
             <div id="divBackground">
@@ -41,20 +43,22 @@
 
             <div>
             <p>Choose a font: </p>
-                <input type="radio" id="monospace" name="font" value="arial">
-                <label for="Arial">Arial</label>
+                <input type="radio" id="monospace" name="font" value="Arial">
+                <label for="arial">Arial</label>
 
-                <input type="radio" id="helvetica" name="font" value="helvetica">
-                <label for="Helvetica">Helvetica</label>
+                <input type="radio" id="impact" name="font" value="Impact">
+                <label for="impact">Impact</label>
 
-                <input type="radio" id="timesnewroman" name="font" value="timesnewroman">
-                <label for="TimesNewRoman">Times New Roman</label>
+                <input type="radio" id="georgia" name="font" value="Georgia">
+                <label for="georgia">Georgia</label>
             </div><br>
 
         </form>
     </div>
 
-    <button id="startButton" name="startButton">Start</button>
+    <button id="startButton" name="startButton">Start Game!</button>
+
+    <p id="timer"></p>
 
     <div id="memoryArea"></div>
 
