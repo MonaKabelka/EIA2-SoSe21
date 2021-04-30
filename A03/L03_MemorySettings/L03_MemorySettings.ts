@@ -44,10 +44,12 @@ namespace L03_MemorySettings {
                 cardArray.push(cardSymbol[m]);
             }
         }
+
         cardArray.sort(() => 0.5 - Math.random());
         cardField.innerHTML = "";
         document.body.style.background = cardProperties[2];
         document.body.style.fontFamily = cardProperties[5];
+        
         for (let index: number = 0; index < cardArray.length; index++) {
             let card: HTMLElement = <HTMLElement>document.createElement("div");
             card.style.width = cardProperties[1] + "px";
