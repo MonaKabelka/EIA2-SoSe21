@@ -112,8 +112,8 @@ namespace L03_MemorySettings {
 
     function checkWin(): void {
         if (foundPairs == pairsAmount) {
-            //Stop Timer?
-            window.alert("The game is over! You played for " + hours + ":" + minutes + ":" + seconds + "! Press F5 to play again!");
+            //Stop Timer? 
+            window.alert("The game is over! You played with " + cardProperties[0] + " cards for " + hours + ":" + minutes + ":" + seconds + "! Press F5 to play again!");
         }
     }
 }
