@@ -15,23 +15,6 @@ namespace GenerativeArt {
     }
 
     function createArt(): void {
-        for (let i: number = 0; i <= amount; i++) {
-            crc2.globalAlpha = Math.random();
-            let x: number = Math.floor(Math.random() * Math.floor(900));
-            let y: number = Math.floor(Math.random() * Math.floor(700));
-            let radius: number = Math.floor(Math.random() * 201);
-            crc2.beginPath();
-            crc2.strokeStyle = "black";
-            crc2.arc(x, y, radius, 0, 2 * Math.PI);
-            crc2.closePath();
-            for (let k: number = 0; k < 6; k++) {
-                color += hexaDigit[Math.floor(Math.random() * hexaDigit.length)];
-            }
-            crc2.fillStyle = color;
-            crc2.fill();
-            color = "#";
-        }
-        
         for (let n: number = 0; n <= amount; n++) {
             let z: number = Math.floor(Math.random() * 801);
             let z1: number = Math.floor(Math.random() * 801);
@@ -51,7 +34,22 @@ namespace GenerativeArt {
             crc2.fill();
             color = "#";
         } 
-
+        for (let i: number = 0; i <= amount; i++) {
+            crc2.globalAlpha = Math.random();
+            let x: number = Math.floor(Math.random() * Math.floor(900));
+            let y: number = Math.floor(Math.random() * Math.floor(700));
+            let radius: number = Math.floor(Math.random() * 201);
+            crc2.beginPath();
+            crc2.strokeStyle = "black";
+            crc2.arc(x, y, radius, 0, 2 * Math.PI);
+            crc2.closePath();
+            for (let k: number = 0; k < 6; k++) {
+                color += hexaDigit[Math.floor(Math.random() * hexaDigit.length)];
+            }
+            crc2.fillStyle = color;
+            crc2.fill();
+            color = "#";
+        }
         for (let n: number = 0; n <= amount; n++) {
             let z: number = Math.floor(Math.random() * 801);
             let z1: number = Math.floor(Math.random() * 801);

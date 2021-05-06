@@ -15,22 +15,6 @@ var GenerativeArt;
         createArt();
     }
     function createArt() {
-        for (let i = 0; i <= amount; i++) {
-            crc2.globalAlpha = Math.random();
-            let x = Math.floor(Math.random() * Math.floor(900));
-            let y = Math.floor(Math.random() * Math.floor(700));
-            let radius = Math.floor(Math.random() * 201);
-            crc2.beginPath();
-            crc2.strokeStyle = "black";
-            crc2.arc(x, y, radius, 0, 2 * Math.PI);
-            crc2.closePath();
-            for (let k = 0; k < 6; k++) {
-                color += hexaDigit[Math.floor(Math.random() * hexaDigit.length)];
-            }
-            crc2.fillStyle = color;
-            crc2.fill();
-            color = "#";
-        }
         for (let n = 0; n <= amount; n++) {
             let z = Math.floor(Math.random() * 801);
             let z1 = Math.floor(Math.random() * 801);
@@ -42,6 +26,22 @@ var GenerativeArt;
                 let k1 = Math.floor(Math.random() * Math.floor(10));
                 crc2.lineTo(k1, k);
             }
+            crc2.closePath();
+            for (let k = 0; k < 6; k++) {
+                color += hexaDigit[Math.floor(Math.random() * hexaDigit.length)];
+            }
+            crc2.fillStyle = color;
+            crc2.fill();
+            color = "#";
+        }
+        for (let i = 0; i <= amount; i++) {
+            crc2.globalAlpha = Math.random();
+            let x = Math.floor(Math.random() * Math.floor(900));
+            let y = Math.floor(Math.random() * Math.floor(700));
+            let radius = Math.floor(Math.random() * 201);
+            crc2.beginPath();
+            crc2.strokeStyle = "black";
+            crc2.arc(x, y, radius, 0, 2 * Math.PI);
             crc2.closePath();
             for (let k = 0; k < 6; k++) {
                 color += hexaDigit[Math.floor(Math.random() * hexaDigit.length)];
