@@ -4,7 +4,7 @@ var GenerativeArt;
     window.addEventListener("load", draw);
     let canvas = document.querySelector("canvas");
     let crc2 = canvas.getContext("2d");
-    let amount = Math.floor(Math.random() * 51) + 20;
+    let amount = Math.floor(Math.random() * 21) + 20;
     console.log(amount);
     let hexaDigit = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "a", "b", "c", "d", "e", "f"];
     let color = "#";
@@ -38,8 +38,8 @@ var GenerativeArt;
             crc2.beginPath();
             crc2.moveTo(z1, z);
             for (let f = 0; f < 6; f++) {
-                let k = Math.floor(Math.random() * 11);
-                let k1 = Math.floor(Math.random() * 11);
+                let k = Math.floor(Math.random() * Math.floor(50));
+                let k1 = Math.floor(Math.random() * Math.floor(50));
                 crc2.lineTo(k1, k);
             }
             crc2.closePath();
