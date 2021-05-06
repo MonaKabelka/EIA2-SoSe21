@@ -38,8 +38,8 @@ var GenerativeArt;
             crc2.beginPath();
             crc2.moveTo(z1, z);
             for (let f = 0; f < 6; f++) {
-                let k = Math.floor(Math.random() * Math.floor(50));
-                let k1 = Math.floor(Math.random() * Math.floor(50));
+                let k = Math.floor(Math.random() * Math.floor(10));
+                let k1 = Math.floor(Math.random() * Math.floor(10));
                 crc2.lineTo(k1, k);
             }
             crc2.closePath();
