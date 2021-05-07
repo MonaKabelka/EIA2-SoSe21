@@ -1,5 +1,5 @@
 namespace GenerativeArt {
-    window.addEventListener("load", draw);
+    window.addEventListener("load", createCanvas);
     let canvas: HTMLCanvasElement = document.querySelector("canvas")!;
     let crc2: CanvasRenderingContext2D = canvas.getContext("2d")!;
     let amount: number = Math.floor(Math.random() * 21) + 20;
@@ -8,7 +8,7 @@ namespace GenerativeArt {
     let color: string = "#";
     let star: number[] = [45, 75, 65, 10, 85, 30, 35, 100];
 
-    function draw(): void {
+    function createCanvas(): void {
         canvas.height =  700;
         canvas.width =  900;
         createArt();
@@ -43,7 +43,7 @@ namespace GenerativeArt {
             crc2.strokeStyle = "black";
             crc2.arc(x, y, radius, 0, 2 * Math.PI);
             crc2.closePath();
-            for (let k: number = 0; k < 6; k++) {
+            for (let a: number = 0; a < 6; a++) {
                 color += hexaDigit[Math.floor(Math.random() * hexaDigit.length)];
             }
             crc2.fillStyle = color;
