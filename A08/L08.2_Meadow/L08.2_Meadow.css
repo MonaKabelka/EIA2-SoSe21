@@ -1,0 +1,20 @@
+body {
+    justify-content: center; 
+    align-items: center;
+    display: grid;
+    position: relative;
+    background: url(bg.png) no-repeat center center fixed; 
+    background-size: cover;
+    font-family: 'Dawning of a New Day', cursive;
+    
+}
+
+h1{
+    font-size: 60px;
+    margin: 0px;
+}
+
+canvas {
+    border: 1.5px solid rgb(0, 0, 0);
+    border-radius: 10px;
+}

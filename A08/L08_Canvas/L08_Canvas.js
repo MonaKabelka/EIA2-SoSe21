@@ -1,7 +1,7 @@
 "use strict";
 var GenerativeArt;
 (function (GenerativeArt) {
-    window.addEventListener("load", draw);
+    window.addEventListener("load", createCanvas);
     let canvas = document.querySelector("canvas");
     let crc2 = canvas.getContext("2d");
     let amount = Math.floor(Math.random() * 21) + 20;
@@ -9,7 +9,7 @@ var GenerativeArt;
     let hexaDigit = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "a", "b", "c", "d", "e", "f"];
     let color = "#";
     let star = [45, 75, 65, 10, 85, 30, 35, 100];
-    function draw() {
+    function createCanvas() {
         canvas.height = 700;
         canvas.width = 900;
         createArt();
@@ -43,7 +43,7 @@ var GenerativeArt;
             crc2.strokeStyle = "black";
             crc2.arc(x, y, radius, 0, 2 * Math.PI);
             crc2.closePath();
-            for (let k = 0; k < 6; k++) {
+            for (let a = 0; a < 6; a++) {
                 color += hexaDigit[Math.floor(Math.random() * hexaDigit.length)];
             }
             crc2.fillStyle = color;

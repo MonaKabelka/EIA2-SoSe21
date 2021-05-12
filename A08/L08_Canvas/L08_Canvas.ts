@@ -69,5 +69,5 @@ namespace GenerativeArt {
             crc2.fill();
             color = "#";
         }
-    }   
+    }
 }
