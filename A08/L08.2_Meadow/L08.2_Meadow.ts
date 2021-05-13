@@ -76,7 +76,6 @@ namespace FlowerMeadow {
 
         crc2.save();
         crc2.translate(_position.x, _position.y);
-
         crc2.beginPath();
         crc2.moveTo(0, 0);
         crc2.lineTo(0, -_max);
@@ -94,10 +93,8 @@ namespace FlowerMeadow {
         let gradient: CanvasGradient = crc2.createLinearGradient(0, 0, 0, -_max);
         gradient.addColorStop(0, _colorLow);
         gradient.addColorStop(0.7, _colorHigh);
-
         crc2.fillStyle = gradient;
         crc2.fill();
-
         crc2.restore();
     }
 

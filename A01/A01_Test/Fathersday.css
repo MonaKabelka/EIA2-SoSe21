@@ -1,0 +1,38 @@
+body {
+    justify-content: center; 
+    align-items: center;
+    display: grid;
+    position: relative;
+    font-family: 'Permanent Marker', cursive;
+    background: url(bg.jpg) no-repeat center center fixed; 
+    background-size: cover;
+}
+
+div {
+    margin: auto;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 0px;
+}
+
+.hidden {
+    display: none;
+}
+
+p{
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+img {
+    width: 724.1px;
+    height: 572px;
+}
+
+img:hover{
+    transition: 0.5s;
+    box-shadow: 0 0 1em #000000;
+}
