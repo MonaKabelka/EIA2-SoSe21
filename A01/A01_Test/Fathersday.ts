@@ -1,4 +1,4 @@
-namespace Fathersday{
+namespace Fathersday {
     let cardFront: HTMLElement = document.getElementById("front")!;
     let cardBack: HTMLElement = document.getElementById("back")!;
     let card: HTMLElement = document.getElementById("imageContainer")!;

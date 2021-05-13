@@ -30,9 +30,10 @@ p{
 img {
     width: 724.1px;
     height: 572px;
+    box-shadow: 0 0 8px #000000;
 }
 
 img:hover{
     transition: 0.5s;
-    box-shadow: 0 0 1em #000000;
+    box-shadow: 0 0 1.5em #000000;
 }
