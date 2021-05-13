@@ -6,7 +6,10 @@ body {
     background: url(bg.png) no-repeat center center fixed; 
     background-size: cover;
     font-family: 'Dawning of a New Day', cursive;
-    
+}
+
+div {
+    margin: auto;
 }
 
 h1{
@@ -14,7 +17,21 @@ h1{
     margin: 0px;
 }
 
+button {
+    width: 70px;
+    height: 30px;;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+}
+
+button:hover {
+    background-color: rgb(129, 174, 139);
+    color:white;
+    cursor: pointer;
+}
+
 canvas {
-    border: 1.5px solid rgb(0, 0, 0);
+    border: 1.5px solid #000000;
     border-radius: 10px;
 }
