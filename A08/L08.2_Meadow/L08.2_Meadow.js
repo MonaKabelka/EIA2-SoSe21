@@ -124,8 +124,8 @@ var FlowerMeadow;
         } while (x < crc2.canvas.width);
     }
     function drawLavender(_min, _max) {
-        let stepMin = 10;
-        let stepMax = 15;
+        let stepMin = 5;
+        let stepMax = 10;
         let x = 0;
         let horizon = crc2.canvas.height * goldenCut;
         do {
@@ -167,8 +167,8 @@ var FlowerMeadow;
         } while (x < crc2.canvas.width);
     }
     function drawDandelion(_min, _max) {
-        let stepMin = 10;
-        let stepMax = 15;
+        let stepMin = 5;
+        let stepMax = 10;
         let x = 0;
         let horizon = crc2.canvas.height * goldenCut;
         do {
@@ -191,8 +191,8 @@ var FlowerMeadow;
         } while (x < crc2.canvas.width);
     }
     function drawStarflower(_min, _max) {
-        let stepMin = 10;
-        let stepMax = 15;
+        let stepMin = 5;
+        let stepMax = 10;
         let x = 0;
         let horizon = crc2.canvas.height * goldenCut;
         do {

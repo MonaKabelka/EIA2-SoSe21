@@ -152,8 +152,8 @@ namespace FlowerMeadow {
     }
 
     function drawLavender(_min: number, _max: number): void {
-        let stepMin: number = 10;
-        let stepMax: number = 15;
+        let stepMin: number = 5;
+        let stepMax: number = 10;
         let x: number = 0;
         let horizon: number = crc2.canvas.height * goldenCut;
 
@@ -202,8 +202,8 @@ namespace FlowerMeadow {
     }
     
     function drawDandelion(_min: number, _max: number): void {
-        let stepMin: number = 10;
-        let stepMax: number = 15;
+        let stepMin: number = 5;
+        let stepMax: number = 10;
         let x: number = 0;
         let horizon: number = crc2.canvas.height * goldenCut;
 
@@ -233,8 +233,8 @@ namespace FlowerMeadow {
     }
 
     function drawStarflower(_min: number, _max: number): void {
-        let stepMin: number = 10;
-        let stepMax: number = 15;
+        let stepMin: number = 5;
+        let stepMax: number = 10;
         let x: number = 0;
         let horizon: number = crc2.canvas.height * goldenCut;
 
