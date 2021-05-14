@@ -215,10 +215,12 @@ namespace FlowerMeadow {
             let r1: number = 2;
             let r2: number = 7;
             let gradient: CanvasGradient = crc2.createRadialGradient(0, -26, r1, 0, -26, r2);
+            let flowerSize: number = .8 + Math.random() * (1.5 - .8);
 
             gradient.addColorStop(0, "#fdffd1");
             gradient.addColorStop(1, "HSLA(60, 40%, 80%, 0)");
 
+            crc2.scale(flowerSize, flowerSize);
             crc2.fillStyle = "#2f852a";
             crc2.fillRect(0, 0, 1.5, -20);
  
