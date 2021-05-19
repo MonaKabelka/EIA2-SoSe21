@@ -1,0 +1,46 @@
+html,body {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background: url(bg.jpg) no-repeat center center fixed; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: sans-serif;   
+}
+
+#heading {
+    font-family: 'Homemade Apple', cursive;
+    font-size: 70px;
+    margin: 0px;
+}
+
+h1{
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 0px;
+}
+
+#stocks {
+    border: #ffffff solid 1px;
+    border-radius: 20px;
+    background-color: #ffffff47;
+    text-align: center;
+    width: 350px;
+    margin: 20px;
+}
+
+#animalName, #songText {
+    font-family: 'Homemade Apple', cursive;
+}
+
+button {
+    margin: 10px 20px 0px 20px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #ffff009e;
+}
