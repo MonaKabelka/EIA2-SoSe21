@@ -65,11 +65,11 @@ var Advanced;
         requestAnimationFrame(animate);
         Advanced.crc2.clearRect(0, 0, Advanced.crc2.canvas.width, Advanced.crc2.canvas.height);
         Advanced.crc2.putImageData(imageData, 0, 0);
-        for (let index = 0; index < moveable.length; index++) {
-            moveable[index].update();
-        }
         for (let index = 0; index < flowers.length; index++) {
             flowers[index].updateNectar();
+        }
+        for (let index = 0; index < moveable.length; index++) {
+            moveable[index].update();
         }
     }
 })(Advanced || (Advanced = {}));
