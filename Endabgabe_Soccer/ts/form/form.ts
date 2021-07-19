@@ -74,14 +74,11 @@ namespace soccer {
             subPlayerDOMElement.innerHTML = "<option value=" + subB[0] + ">Team B: Sub.1</option><option value=" + subB[1] + ">Team B: Sub.2</option><option value=" + subB[2] + ">Team B: Sub.3</option>";
         }
         subChange();
-        // console.log(playerIndex);
-        // formIntoHTML(playerIndex);
     }
 
     export function posessionUpdate(_index: number): void {
         let chosenPlayer: Player = <Player>players[_index];
         posession.innerHTML = "Posession Player:" + chosenPlayer.jerseyNumberPlayer + " Team:" + chosenPlayer.playerTeam;
-        // updateSelect();
     }
 
     export function switchForm(_event: KeyboardEvent): void {
@@ -93,8 +90,7 @@ namespace soccer {
                 }
                 formIntoHTML(playerIndex);
                 break;
-
-
+                
             case "ArrowRight":
                 playerIndex++;
                 if (playerIndex > 27) {

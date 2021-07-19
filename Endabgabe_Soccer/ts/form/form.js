@@ -75,13 +75,10 @@ var soccer;
             soccer.subPlayerDOMElement.innerHTML = "<option value=" + subB[0] + ">Team B: Sub.1</option><option value=" + subB[1] + ">Team B: Sub.2</option><option value=" + subB[2] + ">Team B: Sub.3</option>";
         }
         subChange();
-        // console.log(playerIndex);
-        // formIntoHTML(playerIndex);
     }
     function posessionUpdate(_index) {
         let chosenPlayer = soccer.players[_index];
         soccer.posession.innerHTML = "Posession Player:" + chosenPlayer.jerseyNumberPlayer + " Team:" + chosenPlayer.playerTeam;
-        // updateSelect();
     }
     soccer.posessionUpdate = posessionUpdate;
     function switchForm(_event) {
