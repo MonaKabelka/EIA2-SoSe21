@@ -1,8 +1,8 @@
 "use strict";
-//Der Code entstand in Zusammenarbeit mit: Huu Thien Phan Ngoc, Mariia Kolkutova, Christina Däschner und Timur Yildirim
+//This concept was developed in cooperation with Huu Thien Phan Ngoc, Mariia Kolkutova, Christina Däschner and Timur Yildirim
 var soccer;
 (function (soccer) {
-    window.addEventListener("load", handleLoad); //Eventlistener auf Window => Wenn Fenster geladen hat wird handleLoad aufgerufen
+    window.addEventListener("load", handleLoad);
     let Task;
     (function (Task) {
         Task[Task["lookForBall"] = 0] = "lookForBall";
@@ -11,9 +11,9 @@ var soccer;
         Task[Task["walkToOrigin"] = 3] = "walkToOrigin";
         Task[Task["changePlayer"] = 4] = "changePlayer";
     })(Task = soccer.Task || (soccer.Task = {}));
-    soccer.animationKey = true; //Um "Zeit" zu stoppen
-    soccer.shootKey = false; //Um mit dem Ball zu schießen => nur einen Key? Statt animationKey und shootKey
-    soccer.players = []; //Array für alle Objekte von Spielern, Schiedsrichtern und Linienrichtern
+    soccer.animationKey = true;
+    soccer.shootKey = false;
+    soccer.players = [];
     soccer.scoreA = 0;
     soccer.scoreB = 0;
     function handleLoad() {
@@ -41,17 +41,17 @@ var soccer;
         soccer.canvas.width = 900;
         soccer.canvas.height = 500;
         soccer.drawField();
-        soccer.imageData = soccer.crc2.getImageData(0, 0, soccer.canvas.width, soccer.canvas.height); //gezeichnetes Fußballfeld speichern
-        soccer.ball = new soccer.Ball(new soccer.Vector(soccer.canvas.width * 0.5, soccer.canvas.height * 0.5)); //Ball erzeugen 
-        createPlayer(); //Spieler erzeugen
+        soccer.imageData = soccer.crc2.getImageData(0, 0, soccer.canvas.width, soccer.canvas.height);
+        soccer.ball = new soccer.Ball(new soccer.Vector(soccer.canvas.width * 0.5, soccer.canvas.height * 0.5));
+        createPlayer();
         createReferees();
         soccer.handleChange();
         soccer.formIntoHTML(0);
-        animate(); //Animation starten
+        animate();
     }
     function createPlayer() {
-        for (let indexA = 0; indexA < 2; indexA++) { //14 Spieler für Team 1 erstellen 
-            for (let indexB = 0; indexB < 11; indexB++) { //11 auf dem Feld
+        for (let indexA = 0; indexA < 2; indexA++) {
+            for (let indexB = 0; indexB < 11; indexB++) {
                 let randomNumber = Math.floor(1 + Math.random() * (50 - 1));
                 if (indexA == 0) {
                     soccer.players.push(new soccer.Player(new soccer.Vector(soccer.positionsTeam1[indexB].x, soccer.positionsTeam1[indexB].y), "red", true, randomNumber, "A"));
@@ -79,27 +79,27 @@ var soccer;
         soccer.players.push(new soccer.Linereferee(new soccer.Vector(230, 485), "#ffff82"));
     }
     function shootBall(_event) {
-        if (soccer.shootKey == true) { //shootKey nur dann true, wenn "Zeit angehalten" wird => in ball.ts checkEnvironment()
-            let rect = soccer.canvas.getBoundingClientRect(); //Stellt Verhältnismäßigkeiten auf Canvas wieder her (bei Fenstergrößen Änderung)
+        if (soccer.shootKey == true) {
+            let rect = soccer.canvas.getBoundingClientRect();
             let mouse = new soccer.Vector(_event.clientX - rect.left, _event.clientY - rect.top);
-            soccer.key = true; //Key für Player
-            soccer.ball.setnewPosition(mouse); //Koordinaten von Mouseevent als Argument übergeben
-            soccer.animationKey = true; //Animation geht weiter
-            soccer.shootKey = false; //Man kann nicht mehr schießen
+            soccer.key = true;
+            soccer.ball.setnewPosition(mouse);
+            soccer.animationKey = true;
+            soccer.shootKey = false;
             animate();
         }
     }
     function animate() {
         if (soccer.animationKey == true) {
             requestAnimationFrame(animate);
-            soccer.crc2.clearRect(0, 0, soccer.crc2.canvas.width, soccer.crc2.canvas.height); //Canvas wird geleert
+            soccer.crc2.clearRect(0, 0, soccer.crc2.canvas.width, soccer.crc2.canvas.height);
             soccer.crc2.putImageData(soccer.imageData, 0, 0); //gespeichertes Spielfeld wird wieder gezeichnet
             for (let index = 0; index < soccer.players.length; index++) {
                 soccer.players[index].update();
-                soccer.players[index].draw(); //Jeder Spieler wird mit neuer Position gezeichnet
+                soccer.players[index].draw();
             }
             soccer.ball.update();
-            soccer.ball.draw(); //Ball wird mit neuer Position gezeichnet
+            soccer.ball.draw();
         }
     }
 })(soccer || (soccer = {}));

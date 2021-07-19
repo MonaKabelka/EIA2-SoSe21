@@ -33,11 +33,11 @@ var soccer;
         update() {
             let diff = soccer.Vector.getDifference(soccer.ball.ballPos, this.position);
             if (Math.abs(diff.x) < 30 && Math.abs(diff.y) < 30) {
-                //nothing
+                //Schiedsrichter steht
             }
             else {
-                this.position.x += diff.x * 0.005;
-                this.position.y += diff.y * 0.005;
+                diff.scale(0.005);
+                this.position.add(diff);
             }
         }
     }
