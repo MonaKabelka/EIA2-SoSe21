@@ -1,6 +1,6 @@
 "use strict";
-var Advanced;
-(function (Advanced) {
+var Reloaded;
+(function (Reloaded) {
     class Moveable {
         constructor(_position, _velocity) {
             this.posX = _position.x;
@@ -15,6 +15,6 @@ var Advanced;
             //
         }
     }
-    Advanced.Moveable = Moveable;
-})(Advanced || (Advanced = {}));
+    Reloaded.Moveable = Moveable;
+})(Reloaded || (Reloaded = {}));
 //# sourceMappingURL=moveable.js.map

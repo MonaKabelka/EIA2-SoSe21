@@ -1,6 +1,6 @@
 "use strict";
-var Advanced;
-(function (Advanced) {
+var Reloaded;
+(function (Reloaded) {
     class Flower {
         constructor(_xPos, _yRandomMin, _yRandomMax) {
             this.nectarValue = Math.floor(Math.random() * 2000) + 1000;
@@ -18,6 +18,6 @@ var Advanced;
             //
         }
     }
-    Advanced.Flower = Flower;
-})(Advanced || (Advanced = {}));
+    Reloaded.Flower = Flower;
+})(Reloaded || (Reloaded = {}));
 //# sourceMappingURL=flower.js.map
